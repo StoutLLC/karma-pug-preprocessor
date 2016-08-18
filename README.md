@@ -9,7 +9,7 @@ The easiest way is to keep `karma-pug-preprocessor` as a devDependency in your `
 {
   "devDependencies": {
     "karma": "~0.10",
-    "karma-pug-preprocessor": "~0.1"
+    "karma-pug-preprocessor": "1.0.0-beta.0"
   }
 }
 ```

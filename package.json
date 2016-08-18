@@ -1,7 +1,7 @@
 {
   "name": "karma-pug-preprocessor",
   "version": "1.0.0-alpha",
-  "description": "A Karma plugin. Compile jade template on the fly.",
+  "description": "A Karma plugin. Compile pug templates on the fly.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,11 +10,12 @@
   "keywords": [
     "karma-plugin",
     "preprocessor",
-    "jade"
+    "jade",
+    "pug"
   ],
-  "author": "Jeremy Williams<jeremy@ojdx.com>",
+  "author": "Andrew Koroluk <contact@stoutllc.io>",
   "dependencies": {
-    "jade": "~1.0"
+    "pug": "2.0.0-beta5"
   },
   "license": "MIT"
 }

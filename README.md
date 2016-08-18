@@ -1,22 +1,22 @@
-# karma-jade-preprocessor
+# karma-pug-preprocessor
 
-> Preprocessor to compile Jade templates on the fly.
+> Preprocessor to compile Pug templates on the fly.
 
 ## Installation
 
-The easiest way is to keep `karma-jade-preprocessor` as a devDependency in your `package.json`.
+The easiest way is to keep `karma-pug-preprocessor` as a devDependency in your `package.json`.
 ```json
 {
   "devDependencies": {
     "karma": "~0.10",
-    "karma-jade-preprocessor": "~0.1"
+    "karma-pug-preprocessor": "~0.1"
   }
 }
 ```
 
 You can simple do it by:
 ```bash
-npm install karma-jade-preprocessor --save-dev
+npm install karma-pug-preprocessor --save-dev
 ```
 
 ## Configuration
@@ -26,20 +26,20 @@ Following code shows the default configuration...
 module.exports = function(config) {
   config.set({
     preprocessors: {
-      '**/*.jade': ['jade']
+      '**/*.pug': ['pug']
     }
   });
 };
 ```
 
 ## Chaining preprocessors
-The jade preprocessor can be used in conjunction with others (eg. [karma-ng-html2js-preprocessor](https://github.com/karma-runner/karma-ng-html2js-preprocessor)). Simply include it in an array that specifies the chain of processors.
+The pug preprocessor can be used in conjunction with others (eg. [karma-ng-html2js-preprocessor](https://github.com/karma-runner/karma-ng-html2js-preprocessor)). Simply include it in an array that specifies the chain of processors.
 ```js
 // karma.conf.js
 module.exports = function(config) {
   config.set({
     preprocessors: {
-      '**/*.jade': ['jade', 'ng-html2js']
+      '**/*.pug': ['pug', 'ng-html2js']
     }
   });
 };

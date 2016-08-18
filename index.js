@@ -1,23 +1,23 @@
-var jade = require('jade');
+var pug = require('pug');
 
-var createJadePreprocessor = function(logger, basePath) {
-  var log = logger.create('preprocessor.jade');
+var createPugPreprocessor = function(logger, basePath) {
+  var log = logger.create('preprocessor.pug');
 
   return function(content, file, done) {
     var processed = null;
 
     log.debug('Processing "%s".', file.originalPath);
-    file.originalPath = file.originalPath.replace(/\.jade$/, '.html');
+    file.originalPath = file.originalPath.replace(/\.pug$/, '.html');
 
-    var templateName = file.originalPath.replace(/^.*\/([^\/]+)\.jade$/, '$1');
+    var templateName = file.originalPath.replace(/^.*\/([^\/]+)\.pug$/, '$1');
 
     try {
-        var jadeOptions = {
+        var pugOptions = {
             filename: file.originalPath,
             client: true,
             pretty: true
         };
-        processed = jade.render(content, jadeOptions);    
+        processed = pug.render(content, pugOptions);    
     } catch (e) {
       log.error('%s\n  at %s', e.message, file.originalPath);
     }
@@ -26,9 +26,9 @@ var createJadePreprocessor = function(logger, basePath) {
   };
 };
 
-createJadePreprocessor.$inject = ['logger', 'config.basePath'];
+createPugPreprocessor.$inject = ['logger', 'config.basePath'];
 
 // PUBLISH DI MODULE
 module.exports = {
-  'preprocessor:jade': ['factory', createJadePreprocessor]
+  'preprocessor:pug': ['factory', createPugPreprocessor]
 };

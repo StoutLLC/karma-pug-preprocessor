@@ -7,7 +7,7 @@ var createPugPreprocessor = function(logger, basePath) {
     var processed = null;
 
     log.debug('Processing "%s".', file.originalPath);
-    file.originalPath = file.originalPath.replace(/\.pug$/, '.html');
+    file.path = file.originalPath.replace(/\.pug$/, '.html');
 
     var templateName = file.originalPath.replace(/^.*\/([^\/]+)\.pug$/, '$1');
 

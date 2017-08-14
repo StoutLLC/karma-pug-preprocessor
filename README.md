@@ -8,8 +8,8 @@ The easiest way is to keep `karma-pug-preprocessor` as a devDependency in your `
 ```json
 {
   "devDependencies": {
-    "karma": "~0.10",
-    "karma-pug-preprocessor": "1.0.0-beta.0"
+    "karma": "1.7.0",
+    "karma-pug-preprocessor": "1.0.0-beta.2"
   }
 }
 ```
@@ -30,6 +30,25 @@ module.exports = function(config) {
     }
   });
 };
+```
+
+As with [other preprocessors](http://karma-runner.github.io/1.0/config/preprocessors.html), One can further configure the options passed to Pug either by adding an extra property to your `karma.conf.js`:
+```js
+pugPreprocessor: {
+  options: {
+    pretty: false
+  }
+}
+```
+
+Or by abstracting this into a custom preprocessor:
+```js
+customPreprocessors: {
+  myPug: {
+    base: 'pug',
+    options: {pretty: false}
+  }
+}
 ```
 
 ## Chaining preprocessors

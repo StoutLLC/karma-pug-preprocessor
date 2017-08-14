@@ -1,6 +1,6 @@
 {
   "name": "karma-pug-preprocessor",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "A Karma plugin. Compile pug templates on the fly.",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,7 @@
   ],
   "author": "Andrew Koroluk <contact@stoutllc.io>",
   "dependencies": {
-    "pug": "2.0.0-beta5"
+    "pug": "2.0.0-rc.3"
   },
   "license": "MIT"
 }
